@@ -6,14 +6,14 @@ import static com.google.common.collect.Collections2.transform;
 import static com.google.common.collect.Lists.newArrayList;
 
 public class Schema {
-    private List<ExpectedArg> expectedArgs;
+    private List<Flag> flags;
 
     public Schema(String schemaDescription) {
         String[] schemasAsText = schemaDescription.split(" ");
-        expectedArgs = newArrayList(transform(newArrayList(schemasAsText), input -> new ExpectedArg(input)));
+        flags = newArrayList(transform(newArrayList(schemasAsText), input -> new Flag(input)));
     }
 
-    public List<ExpectedArg> getExpectedArgs() {
-        return expectedArgs;
+    public List<Flag> getFlags() {
+        return flags;
     }
 }

@@ -1,9 +1,9 @@
 package org.codingdojo.kata.args;
 
-public class ExpectedArg {
+public class Flag {
     private String description;
 
-    public ExpectedArg(String description) {
+    public Flag(String description) {
         this.description = description;
     }
 
