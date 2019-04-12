@@ -10,13 +10,10 @@ import static com.google.common.collect.Lists.newArrayList;
 
 public class Parser {
     private final List<Argument> arguments;
-    private Schema schema;
 
     public Parser(Schema schema, String inputText) {
-        this.schema = schema;
         arguments = newArrayList();
-        Pattern pattern = Pattern.compile("(-[a-z] [^-]*)");
-        Matcher matcher = pattern.matcher(inputText);
+        Matcher matcher = Pattern.compile("(-[a-z] [^-]*)").matcher(inputText);
         while(matcher.find()) {
             arguments.add(new Argument(matcher.group(1), schema));
         }
