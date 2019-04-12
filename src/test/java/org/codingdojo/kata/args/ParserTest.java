@@ -26,6 +26,9 @@ public class ParserTest {
     @Test
     public void should_assign_default_value_if_argument_is_missing() {
         Parser parser = new Parser(schema, "");
-        assertThat(parser.getArgumentSize(), is(0));
+        assertThat(parser.getArgumentSize(), is(3));
+        assertThat(parser.getArgumentValue("l"), is(false));
+        assertThat(parser.getArgumentValue("p"), is(0));
+        assertThat(parser.getArgumentValue("d"), is(""));
     }
 }

@@ -1,5 +1,6 @@
 package org.codingdojo.kata.args;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -20,6 +21,12 @@ public class Parser {
             arguments.add(new Argument(matcher.group(1), schema));
         }
 
+        for (Flag flag : schema.getFlags()) {
+            Collection<Argument> matchingArgs = filter(arguments, argument -> argument.getName().equals(flag.getName()));
+            if(matchingArgs.isEmpty()) {
+                arguments.add(new NullArgument(flag));
+            }
+        }
     }
 
     public int getArgumentSize() {

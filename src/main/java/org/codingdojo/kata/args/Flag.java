@@ -22,4 +22,8 @@ public class Flag {
     public String getExpectedType() {
         return expectedType;
     }
+
+    public String defaultTextPresentation() {
+        return "-" + name + " ";
+    }
 }

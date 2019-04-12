@@ -1,16 +1,12 @@
 package org.codingdojo.kata.args;
 
-import com.google.common.collect.Collections2;
-
-import java.util.List;
-
 import static com.google.common.collect.Collections2.filter;
 import static com.google.common.collect.Lists.newArrayList;
 
 public class Argument {
     private final String name;
     private final String rawValue;
-    private String valueType;
+    protected String valueType;
 
     public Argument(String text) {
         this(text, "string");
