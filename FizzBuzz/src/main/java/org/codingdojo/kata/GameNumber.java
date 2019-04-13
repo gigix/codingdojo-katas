@@ -9,15 +9,23 @@ public class GameNumber {
 
     @Override
     public String toString() {
-        if (value % 3 == 0 && value % 5 == 0) {
-            return "FizzBuzz";
+        if (!(isFizz() || isBuzz())) {
+            return value.toString();
         }
-        if (value % 3 == 0) {
-            return "Fizz";
-        }
-        if (value % 5 == 0) {
-            return "Buzz";
-        }
-        return value.toString();
+        String result = isFizz() ? "Fizz" : "";
+        result += isBuzz() ? "Buzz" : "";
+        return result;
+    }
+
+    private boolean isBuzz() {
+        return multiplesOrContains(5);
+    }
+
+    private boolean isFizz() {
+        return multiplesOrContains(3);
+    }
+
+    private boolean multiplesOrContains(Integer digit) {
+        return value % digit == 0 || value.toString().contains(digit.toString());
     }
 }

@@ -29,4 +29,22 @@ public class GameNumberTest {
         GameNumber gameNumber = new GameNumber(15);
         assertThat(gameNumber.toString(), is("FizzBuzz"));
     }
+
+    @Test
+    public void should_reply_fizz_when_value_is_13() {
+        GameNumber gameNumber = new GameNumber(13);
+        assertThat(gameNumber.toString(), is("Fizz"));
+    }
+
+    @Test
+    public void should_reply_buzz_when_value_is_52() {
+        GameNumber gameNumber = new GameNumber(52);
+        assertThat(gameNumber.toString(), is("Buzz"));
+    }
+
+    @Test
+    public void should_reply_fizz_buzz_when_value_is_51() {
+        GameNumber gameNumber = new GameNumber(51);
+        assertThat(gameNumber.toString(), is("FizzBuzz"));
+    }
 }
