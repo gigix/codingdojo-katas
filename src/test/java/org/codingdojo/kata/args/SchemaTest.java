@@ -13,6 +13,9 @@ public class SchemaTest {
         Schema schema = new Schema("l:boolean p:integer d:string");
         List<Flag> flags = schema.getFlags();
         assertThat(flags.size(), is(3));
-        assertThat(flags.get(0).getDescription(), is("l:boolean"));
+        Flag firstFlag = flags.get(0);
+        assertThat(firstFlag.getDescription(), is("l:boolean"));
+        assertThat(firstFlag.getName(), is("l"));
+        assertThat(firstFlag.getExpectedType(), is("boolean"));
     }
 }
